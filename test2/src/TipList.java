@@ -1,16 +1,17 @@
 import java.util.*;
 
 public class TipList {
-    Map<String, String> yuceList;
+    Map<String, String> PredictList;
     Map<Character, Set<String>> follMap;
     Map<Character, Set<String>> firstMap;
     Set<Character> ss;
     String start;
+
     ArrayList<String> list;
 
     public TipList(Map<Character, Set<String>> firMap, Map<Character,
             Set<String>> follMap, Set<Character> ss, String start, ArrayList<String> ls) {
-        yuceList = new HashMap<>();
+        PredictList = new HashMap<>();
         this.follMap = follMap;
         this.firstMap = firMap;
         this.ss = ss;
@@ -49,15 +50,15 @@ public class TipList {
                             value = value.substring(0, index - 1);
                     }
                     System.out.printf("%15s", value);
-                    yuceList.put(start + "+" + s, value);
+                    PredictList.put(start + "+" + s, value);
                 } else if (flag == 1 && find(start, s, 0)) {
                     value = sss.charAt(0) + "->" + "ε";
                     System.out.printf("%15s", value);
-                    yuceList.put(start + "+" + s, value);
+                    PredictList.put(start + "+" + s, value);
                 } else {
                     value = "Error";
                     System.out.printf("%15s", "Error");
-                    yuceList.put(start + "+" + s, value);
+                    PredictList.put(start + "+" + s, value);
                 }
                 flag = 0;
                 sss = tmp;
@@ -74,7 +75,7 @@ public class TipList {
         return aa.toString();
     }
 
-    public void analy(String ss) {
+    public void Analysis(String ss) {
         ss = reverse(ss) + "#";
         Stack<String> wenFa = new Stack<>();
         //将起始非终结符号要入栈中
@@ -97,7 +98,7 @@ public class TipList {
             //是操作数
             while (isChar(a) && !top.equals("i")) {
                 //获取相应的文法产生式
-                String str = yuceList.get(top + "+i");
+                String str = PredictList.get(top + "+i");
                 //将相应的文法产生式加到栈中
                 pushToStack(wenFa, str);
                 System.out.printf("%20s%20s\n", ss, str);
@@ -116,7 +117,7 @@ public class TipList {
                 //当前弹出栈顶的元素是非终结符号
                 while (Judge.isVn(top.charAt(0)) && !top.equals("" + a)) {
                     //获取当前非终结符号和运算符号映射的文法表达式
-                    String strs = yuceList.get(top + "+" + a);
+                    String strs = PredictList.get(top + "+" + a);
                     System.out.printf("%20s%20s\n", ss, strs);
                     //打印当前栈中的非终结符号
                     pushToStack(wenFa, strs);

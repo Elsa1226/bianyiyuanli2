@@ -3,9 +3,9 @@ import java.util.ArrayList;
 public class Judge {//检查是否为值接左递归
 
     public static String getA(String ss) {
-        int sindex = ss.indexOf("->");
+        int s_index = ss.indexOf("->");
         StringBuilder str = new StringBuilder();
-        for (int i = sindex + 3; i < ss.length(); i++) {
+        for (int i = s_index + 3; i < ss.length(); i++) {
             if (ss.charAt(i) == '|') break;
             str.append(ss.charAt(i));
         }

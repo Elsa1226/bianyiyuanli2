@@ -11,7 +11,7 @@ public class Grammars {
     static Set<Character> ss = null;
     static String start;
 
-    public static void getSuanFu(String a) {
+    public static void getGrammar(String a) {
         for (int i = 0; i < a.length(); i++) {
             char cc = a.charAt(i);
             if (cc != 'ε' && cc != '-' && cc != '>' && cc != '|' && (!Judge.isVn(cc))) {
@@ -31,7 +31,7 @@ public class Grammars {
             Matcher m = p.matcher(tmp);
             tmp = m.replaceAll("");
             if (tmp.equals("#")) break;
-            getSuanFu(tmp);
+            getGrammar(tmp);
             ls.add(tmp);
         }
         ls = Judge.removeDirectLeftRecur(ls);
@@ -51,7 +51,7 @@ public class Grammars {
         tls.process();
         System.out.println("请输入测试表达式：");
         String sss = input.next();
-        tls.analy(sss);
+        tls.Analysis(sss);
     }
 
     public static void print(Map<Character, Set<String>> setMap) {
