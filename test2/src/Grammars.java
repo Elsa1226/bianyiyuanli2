@@ -45,24 +45,22 @@ public class Grammars {
 
         TipList tls = new TipList(fir.getFirstMap(), foll.getFollowMap(), ss, start, ls);
         System.out.println("follow集合:");
-        print(foll.getFollowMap());
+        print(foll.getFollowMap(),"Follow");
         System.out.println("first集合:");
-        print(fir.getFirstMap());
+        print(fir.getFirstMap(),"First");
         tls.process();
         System.out.println("请输入测试表达式：");
         String sss = input.next();
         tls.Analysis(sss);
     }
-
-    public static void print(Map<Character, Set<String>> setMap) {
+    public static void print(Map<Character, Set<String>> setMap,String ff) {
         for (Map.Entry<Character, Set<String>> oo : setMap.entrySet()) {
             Set<String> set = oo.getValue();
-            System.out.println("非终结符号:" + oo.getKey());
-            System.out.print("集合:");
+            System.out.print(ff+"( " + oo.getKey()+" ) = {  ");
             for (String jj : set) {
-                System.out.print(jj + "   ");
+                System.out.print(jj + "  ");
             }
-            System.out.println();
+            System.out.println("}");
         }
     }
 }

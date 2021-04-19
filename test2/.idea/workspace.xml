@@ -2,32 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02740a09-e45e-4c8c-920b-b51a90a4ab9d" name="默认变更列表" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/test2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/实践2/First.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/实践2/Follow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/实践2/Grammars.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/实践2/Judge.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/实践2/TipList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bianyiyuanli2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/out/production/bianyiyuanli2/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/out/production/bianyiyuanli2/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/out/production/bianyiyuanli2/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/out/production/bianyiyuanli2/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/out/production/bianyiyuanli2/First.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/out/production/bianyiyuanli2/Follow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/out/production/bianyiyuanli2/Grammars.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/out/production/bianyiyuanli2/Judge.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/out/production/bianyiyuanli2/TipList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/out/production/bianyiyuanli2/bianyiyuanli2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/bianyiyuanli2/Grammars.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/bianyiyuanli2/Grammars.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/bianyiyuanli2/Judge.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/bianyiyuanli2/Judge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/bianyiyuanli2/TipList.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/bianyiyuanli2/TipList.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +24,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -78,5 +55,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
