@@ -55,9 +55,9 @@ public class TipList {
                     value = sss.charAt(0) + "->" + "ε";
                     System.out.printf("%15s", value);
                     PredictList.put(start + "+" + s, value);
-                } else {
+                } else {//预测分析表的error
                     value = "Error";
-                    System.out.printf("%15s", "Error");
+                    System.out.printf("%15s", " ");
                     PredictList.put(start + "+" + s, value);
                 }
                 flag = 0;
@@ -77,11 +77,11 @@ public class TipList {
 
     public void Analysis(String ss) {
         ss = reverse(ss) + "#";
-        Stack<String> wenFa = new Stack<>();
+        Stack<String> Grammars = new Stack<>();
         //将起始非终结符号要入栈中
-        wenFa.push("#");
+        Grammars.push("#");
         System.out.println(start);
-        wenFa.push(start);
+        Grammars.push(start);
         Stack<String> shi = new Stack<>();
         //将起始非终结符号ya入栈中
         shi.push("#");
@@ -90,8 +90,8 @@ public class TipList {
         }
         System.out.printf("%15s%15s%15s\n", "分析栈", "剩余输入串", "推倒式");
         while (!ss.isEmpty()) {
-            printStack(wenFa);
-            String top = wenFa.pop();
+            printStack(Grammars);
+            String top = Grammars.pop();
             //获取产生式的每一个字符
             char a = ss.charAt(0);
 
@@ -100,10 +100,10 @@ public class TipList {
                 //获取相应的文法产生式
                 String str = PredictList.get(top + "+i");
                 //将相应的文法产生式加到栈中
-                pushToStack(wenFa, str);
+                pushToStack(Grammars, str);
                 System.out.printf("%20s%20s\n", ss, str);
-                printStack(wenFa);
-                top = wenFa.pop();
+                printStack(Grammars);
+                top = Grammars.pop();
                 if (top.equals("i")) {
                     System.out.printf("%20s%20s\n", ss, "i");
                 }
@@ -120,9 +120,9 @@ public class TipList {
                     String strs = PredictList.get(top + "+" + a);
                     System.out.printf("%20s%20s\n", ss, strs);
                     //打印当前栈中的非终结符号
-                    pushToStack(wenFa, strs);
-                    printStack(wenFa);
-                    top = wenFa.pop();
+                    pushToStack(Grammars, strs);
+                    printStack(Grammars);
+                    top = Grammars.pop();
                     if (top.equals("" + a)) {
                         System.out.printf("%20s%20s\n", ss, strs);
                     }
@@ -130,7 +130,7 @@ public class TipList {
                 ss = ss.substring(1);
             }
         }
-        if (wenFa.size() == 0) {
+        if (Grammars.size() == 0) {
             System.out.println("文法分析成功!合法语句");
             return;
         }
