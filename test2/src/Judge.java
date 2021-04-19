@@ -31,7 +31,7 @@ public class Judge {//检查是否为值接左递归
                 }
                 String b = s.substring(index1 + 1);
                 tmp.add(s.charAt(0) + "->" + b + x);
-                tmp.add(x + "->" + a + x + "|" + 'ε');.
+                tmp.add(x + "->" + a + x + "|" + 'ε');
                 x += 1;
             } else {
                 tmp.add(s);

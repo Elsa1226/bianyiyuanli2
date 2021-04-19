@@ -22,7 +22,7 @@ public class TipList {
     public void process() {
         ArrayList<Character> arr = new ArrayList<>();
         ss.add('#');
-        System.out.printf("\n%15s", " ");
+        //System.out.printf("\n%15s", " ");
         for (char a : ss) {
             arr.add(a);
             System.out.printf("%15s", a);
@@ -30,7 +30,8 @@ public class TipList {
         //构造预测分析表
         for (String sss : list) {
             char start = sss.charAt(0);
-            System.out.printf("\n%15s", start + "");
+            System.out.printf("\n"+start);
+            //System.out.printf("\n%15s", start + "");
             String value;
             int flag = 0;
             for (char s : arr) {
@@ -63,8 +64,8 @@ public class TipList {
                 flag = 0;
                 sss = tmp;
             }
-            System.out.println();
         }
+        System.out.println();
     }
 
     public String reverse(String ss) {

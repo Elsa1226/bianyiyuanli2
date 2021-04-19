@@ -61,12 +61,13 @@ public class Grammars {
         foll.findFollow(ls, fir.getFirstMap());
 
         TipList tls = new TipList(fir.getFirstMap(), foll.getFollowMap(), ss, start, ls);
-        System.out.println("follow集合:");
+        System.out.println("\nfollow集合:");
         print(foll.getFollowMap(),"Follow");
-        System.out.println("first集合:");
+        System.out.println("\nfirst集合:");
         print(fir.getFirstMap(),"First");
+        System.out.println();
         tls.process();
-        System.out.println("请输入测试表达式：");
+        System.out.println("\n请输入测试表达式：");
         String sss = input.next();
         tls.Analysis(sss);
     }
