@@ -12,13 +12,13 @@ public class Judge {//检查是否为值接左递归
         return str.toString();
     }
 
-    public static ArrayList<String> removeDirectLeftRecur0(ArrayList<String> ls) {
+    public static ArrayList<String> removeDirectLeftRecur(ArrayList<String> ls) {
         char x = 'X';
         ArrayList<String> tmp = new ArrayList<>();
+        System.out.println("原来的文法产生式：");
         for (String s : ls) {
             System.out.println(s);
         }
-        System.out.println("above");
         for (String s : ls) {
             int index = s.indexOf("->");
             if (s.charAt(0) == s.charAt(index + 2)) {
@@ -30,23 +30,21 @@ public class Judge {//检查是否为值接左递归
                     continue;
                 }
                 String b = s.substring(index1 + 1);
-                System.out.println(s.charAt(0) + "->" + b + x);
-                System.out.println(x + "->" + a + x + "|" + 'ε');
                 tmp.add(s.charAt(0) + "->" + b + x);
-                tmp.add(x + "->" + a + x + "|" + 'ε');
+                tmp.add(x + "->" + a + x + "|" + 'ε');.
                 x += 1;
             } else {
                 tmp.add(s);
             }
         }
-        for (String s : ls) {
+        System.out.println("消除直接左递归后的结果：");
+        for (String s : tmp) {
             System.out.println(s);
         }
-        System.out.println("\n\n\n");
         return tmp;
     }
 
-    public static ArrayList<String> removeDirectLeftRecur(ArrayList<String> ls) {
+    public static ArrayList<String> removeDirectLeftRecur0(ArrayList<String> ls) {
         char x = 'X';
         ArrayList<String> tmp = new ArrayList<>();
         System.out.println("原来的文法产生式：");

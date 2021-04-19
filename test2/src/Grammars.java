@@ -7,6 +7,11 @@ T->F*T|F
 F->(E)|i
 #
 
+E->E+T|T
+T->T*F|F
+F->(E)|i
+#
+
 E->RE+T|T
 T->GF*T|F
 F->(E)|i
@@ -42,9 +47,9 @@ public class Grammars {
             getGrammar(tmp);
             ls.add(tmp);
         }
-        ls=Judge.removeDirectLeftRecur0(ls);
+        ls=Judge.removeDirectLeftRecur(ls);
 
-        //ls = Judge.removeDirectLeftRecur(ls);
+        //ls = Judge.removeDirectLeftRecur0(ls);
 
 
         ArrayList<String> tmp = new ArrayList<>(ls);
