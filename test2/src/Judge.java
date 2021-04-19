@@ -12,6 +12,40 @@ public class Judge {//检查是否为值接左递归
         return str.toString();
     }
 
+    public static ArrayList<String> removeDirectLeftRecur0(ArrayList<String> ls) {
+        char x = 'X';
+        ArrayList<String> tmp = new ArrayList<>();
+        for (String s : ls) {
+            System.out.println(s);
+        }
+        System.out.println("above");
+        for (String s : ls) {
+            int index = s.indexOf("->");
+            if (s.charAt(0) == s.charAt(index + 2)) {
+                //P->Pa|b    消除左递归的规则  P->bX, X->aX|e
+                String a = getA(s);
+                int index1 = s.indexOf('|');
+                if (index1 == -1) {
+                    tmp.add(s);
+                    continue;
+                }
+                String b = s.substring(index1 + 1);
+                System.out.println(s.charAt(0) + "->" + b + x);
+                System.out.println(x + "->" + a + x + "|" + 'ε');
+                tmp.add(s.charAt(0) + "->" + b + x);
+                tmp.add(x + "->" + a + x + "|" + 'ε');
+                x += 1;
+            } else {
+                tmp.add(s);
+            }
+        }
+        for (String s : ls) {
+            System.out.println(s);
+        }
+        System.out.println("\n\n\n");
+        return tmp;
+    }
+
     public static ArrayList<String> removeDirectLeftRecur(ArrayList<String> ls) {
         char x = 'X';
         ArrayList<String> tmp = new ArrayList<>();
