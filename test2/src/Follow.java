@@ -90,11 +90,17 @@ public class Follow {
             }
             findFollow(ls, set, tmp, 0);
             setMap.put(tmp, set);
+
             if (!list.isEmpty()) {
                 for (String s : list) {
                     char src = s.charAt(0);
                     char dst = s.charAt(s.length() - 1);
-                    setMap.get(dst).addAll(setMap.get(src));
+                    if(setMap.get(src)!=null){
+                        setMap.get(src).forEach(item -> {
+                            setMap.get(dst).add(item);
+                        });
+                    }
+                    //setMap.get(dst).addAll(setMap.get(src));
                 }
             }
         }

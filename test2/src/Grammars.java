@@ -48,24 +48,23 @@ public class Grammars {
             ls.add(tmp);
         }
         ls=Judge.removeDirectLeftRecur(ls);
-
         //ls = Judge.removeDirectLeftRecur0(ls);
 
-
         ArrayList<String> tmp = new ArrayList<>(ls);
-        First fir = new First();
-        fir.findVtFirst(ls);
+        First first = new First();
+        first.findVtFirst(ls);
         ls = tmp;
         start = "" + ls.get(0).charAt(0);
-        Follow foll = new Follow();
-        foll.findFollow(ls, fir.getFirstMap());
+        Follow follow = new Follow();
+        follow.findFollow(ls, first.getFirstMap());
 
-        TipList tls = new TipList(fir.getFirstMap(), foll.getFollowMap(), ss, start, ls);
+        TipList tls = new TipList(first.getFirstMap(), follow.getFollowMap(), ss, start, ls);
         System.out.println("\nfollow集合:");
-        print(foll.getFollowMap(),"Follow");
+        print(follow.getFollowMap(),"Follow");
         System.out.println("\nfirst集合:");
-        print(fir.getFirstMap(),"First");
+        print(first.getFirstMap(),"First");
         System.out.println();
+        System.out.println("预测分析表：");
         tls.process();
         System.out.println("\n请输入测试表达式：");
         String sss = input.next();

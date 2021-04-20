@@ -6,17 +6,43 @@ import java.util.Set;
 public class First {
     HashMap<Character, Set<String>> setMap;
 
+    public static int flag=0;
+    public static String test;
+    public static int n;
     public String getInfo(ArrayList<String> ls, char vn) {
-        for (String tmp : ls) {
-            char cc = tmp.charAt(0);
-            if (cc == vn) {
-                int index = tmp.indexOf("->");
-                String tt;
-                tt = tmp.substring(index + 2);
-                return tt;
+        if(flag<10){
+            flag++;
+            for(int i=0;i<ls.size();i++){
+                char cc = ls.get(i).charAt(0);
+                if (cc == vn) {
+                    int index = ls.get(i).indexOf("->");
+                    String tt;
+                    tt = ls.get(i).substring(index + 2);
+                    if(test==tt)flag=11;
+                     System.out.println("wocao   "+vn+" "+ls.get(i)+" "+tt+" "+test+" "+flag);
+                     test=tt;
+                    return tt;
+                }
             }
+            return "";
         }
-        return "";
+        else{
+            flag++;
+            if(flag>=11)flag=0;
+            for(int i=n;i<ls.size();i++){
+                char cc = ls.get(i).charAt(0);
+                if (cc == vn) {
+                    n=i+1;
+                    int index = ls.get(i).indexOf("->");
+                    String tt;
+                    tt = ls.get(i).substring(index + 2);
+                     System.out.println("wocaonima   "+vn+" "+ls.get(i)+" "+tt);
+                    return tt;
+                }
+            }
+            n=0;
+            return "";
+        }
     }
 
     public boolean hasEmpty(char aa, ArrayList<String> ls) {
@@ -31,8 +57,8 @@ public class First {
         assert ss != null;
         return ss.contains("ε");
     }
-
     public void findFirst(Set<String> set, ArrayList<String> ls, char start, int index, String info) {
+        test=info;
         if (index >= info.length()) {
             return;
         }
@@ -43,7 +69,7 @@ public class First {
             info = getInfo(ls, tmp);
             //判断是否含有空串
             findFirst(set, ls, start, index, info);
-            if (index < info.length()) {
+            if (index < info.length()-1) {
                 char yy = info.charAt(index + 1);
                 //是当前非终结符号包含e，则需要向下再推倒
                 if (Judge.isVn(yy) && hasEmpty(tmp, ls) && start != yy) {
@@ -89,10 +115,11 @@ public class First {
         for (int i = 0; i < ls.size(); i++) {
             String str = ls.get(i);
             Set<String> set = new HashSet<>();
-            char aa = str.charAt(0);
+            char aa = str.charAt(0);//非终结符
             int index = str.indexOf("->");
-            str = str.substring(index + 2);
+            str = str.substring(index + 2);//对应的文法
             findFirst(set, ls, aa, 0, str);
+            System.out.println("非终结符: "+aa);
             setMap.put(aa, set);
         }
     }
